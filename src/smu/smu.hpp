@@ -1,3 +1,5 @@
+#pragma once
+
 // Tradtional clocking without interacting with the SMU library, basically amdgpu
 
 #include <cstdint>

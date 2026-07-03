@@ -1,3 +1,5 @@
+#pragma once
+
 /*  handle actual interaction with the Bc250Smu */
 
 

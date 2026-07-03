@@ -1,3 +1,5 @@
+#pragma once
+
 #include "transport.hpp"
 #include <cstdint>
 
