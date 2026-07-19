@@ -1,10 +1,4 @@
-## WHAT IS THIS??
-WIP: rewriting to cpp 
+simple power manager for bc-250 cyan skillfish.
 
-
-## todo
-* SMU feature enable 
-* MCLK control (reduce memory speed at idle) 
-* SOC clock control  
-* Display clock control 
-
+Mostly derived out of the work of bc-250 collective; I wouldn't have had the gull to test random addresses myself. However, this is an attempt to optimize against power efficency\
+because I don't care for peformance.
