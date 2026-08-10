@@ -48,10 +48,8 @@ APU::APU(std::vector<SafePt> pts) : smu(true, "0000:00:00.0", 67) {
   this->safe_pts = pts;
 
 };
+APU::~APU() = default;
 
-APU::~APU() {
-  // delete dev;
-};
 
 std::tuple<uint32_t, uint32_t> APU::poll_and_get_load() {
 
@@ -61,9 +59,9 @@ std::tuple<uint32_t, uint32_t> APU::poll_and_get_load() {
   this->sample <<= 1;
   if (busyornotidk) 
     this->sample |= 1;
-
   uint32_t avgload = __builtin_popcount(this->sample);
-  uint32_t len = std::__countr_zero(this->sample);
+
+  uint32_t len = this->sample == 0 ? 32u : static_cast<uint32_t>(__builtin_ctz(this->sample));
   std::tuple<uint32_t, uint32_t> turp(avgload, len);
   return turp;
 
@@ -79,8 +77,9 @@ uint32_t APU::read_temp() {
    );    
   return temp_millidegrees;
 };
+
 bool APU::change_freq(uint32_t arg) {
-  auto safe_pt = this->safe_pts[0]; // add logic so that it would pick from closest to thingy functionally latelrkajwkefhasjkdfh
+  auto safe_pt = this->safe_pts[0]; // add logic so that it would pick from closest to thingy functionally
   this->smu.force_gfx_vid((uint32_t)safe_pt.volt);
   this->smu.force_gfx_freq(safe_pt.freq);
   return true;

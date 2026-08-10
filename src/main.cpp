@@ -7,7 +7,7 @@
 #include <string>
 #include <cstdint>
 
-// configuration file
+// you have to go into dev shell or else clangd yell at you at smu.hpp
 #include "config.hpp"
 #include "smu/smu.hpp"
 #include "idle/policy.hpp"

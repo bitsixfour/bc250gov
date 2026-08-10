@@ -2,6 +2,7 @@
 pkgs.mkShell {
   packages = [
     pkgs.gcc
+    pkgs.cmake
     pkgs.gnumake
     pkgs.pkg-config
     pkgs.libdrm.dev

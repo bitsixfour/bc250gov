@@ -41,7 +41,6 @@ class Config {
     Config(); // make this edible in a YAML or .jsonc later
     ~Config();
 
-  private:
     std::vector<SafePt> get_safe_pts();
     Time load_default_timing();
     std::tuple<uint32_t, uint32_t> load_default_target();

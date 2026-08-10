@@ -47,7 +47,7 @@ Time Config::load_default_timing() {
 };
 
 
-std::tuple<int, int> Config::load_default_target() {
+std::tuple<uint32_t, uint32_t> Config::load_default_target() {
   std::tuple<int, int> turp(32, 64); // placeholder valueKJAKSFHAJKSFHJKSLDFHJKLSDHGFKLJSDHFKLJSDFHKJLSDFHjkl
   return turp;
 };
@@ -60,3 +60,4 @@ Config::Config() {
 
 };
 
+Config::~Config() = default;
